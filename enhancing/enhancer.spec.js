@@ -11,6 +11,11 @@ describe("enhancer unit tests",() => {
             enhancement: 18,
             durability: 100,
         })
+        expect(() => enhancer.repair({
+            name: "viking ax",
+            enhancement: 18,
+            durability: 100,
+        })).toThrow()
     })
     it("enhances the item success", () => {
         expect(enhancer.success({
@@ -22,6 +27,11 @@ describe("enhancer unit tests",() => {
             enhancement:19,
             durability: 100,
         })
+        expect(() => enhancer.success({
+            name:"kitana",
+            enhancement: 20,
+            durability: 100,
+        })).toThrow()
 
     })
 })
