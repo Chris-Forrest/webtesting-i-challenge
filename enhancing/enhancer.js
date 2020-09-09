@@ -35,5 +35,18 @@ function repair(item) {
 }
 
 function get(item) {
+  let enhancedWeapon = {
+    name:"",
+    enhancement:0,
+    durability:0,
+  }
+
+  if(item.enhancement > 0){
+    return enhancedWeapon = {
+      name: `[+${item.enhancement}] ${item.name}`,
+      enhancement: item.enhancement,
+      durability: item.durability,
+    }
+  }
   return { ...item };
 }

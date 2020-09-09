@@ -71,4 +71,33 @@ describe("enhancer unit tests",() => {
             durability: 100,
         })
     })
+    it("gets the modified name", ()=> {
+        expect(enhancer.get({
+            name:"gladius",
+            enhancement: 16,
+            durability: 100,
+        })).toEqual({
+            name:"[+16] gladius",
+            enhancement:16,
+            durability:100,
+        })
+        expect(enhancer.get({
+            name:"kitana",
+            enhancement: 20,
+            durability: 100,
+        })).toEqual({
+            name:"[+20] kitana",
+            enhancement:20,
+            durability:100,
+        })
+        expect(enhancer.get({
+            name:"sting",
+            enhancement: 1,
+            durability: 100,
+        })).toEqual({
+            name:"[+1] sting",
+            enhancement:1,
+            durability:100,
+        })
+    })
 })
