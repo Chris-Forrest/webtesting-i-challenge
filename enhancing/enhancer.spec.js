@@ -32,6 +32,43 @@ describe("enhancer unit tests",() => {
             enhancement: 20,
             durability: 100,
         })).toThrow()
-
+    })
+    it("enhancement fails", () => {
+        expect(enhancer.fail({
+            name: "rapier",
+            enhancement: 14,
+            durability: 100,
+        })).toEqual({
+            name: "rapier",
+            enhancement: 14,
+            durability: 95,
+        })
+        expect(enhancer.fail({
+            name: "broadsword",
+            enhancement: 15,
+            durability: 100,
+        })).toEqual({
+            name: "broadsword",
+            enhancement: 15,
+            durability: 90,
+        })
+        expect(enhancer.fail({
+            name: "gladius",
+            enhancement: 16,
+            durability: 100,
+        })).toEqual({
+            name: "gladius",
+            enhancement: 16,
+            durability: 90,
+        })
+        expect(enhancer.fail({
+            name: "halibeard",
+            enhancement: 17,
+            durability: 100,
+        })).toEqual({
+            name: "halibeard",
+            enhancement: 16,
+            durability: 100,
+        })
     })
 })
