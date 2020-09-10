@@ -99,5 +99,10 @@ describe("enhancer unit tests",() => {
             enhancement:1,
             durability:100,
         })
+        expect(() => enhancer.get({
+            name:"butterknife",
+            enhancement: 0,
+            durability: 100,
+        })).toThrow()
     })
 })
